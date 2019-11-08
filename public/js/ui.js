@@ -11,9 +11,23 @@ const alertboxClasses = ["show", "error", "success", "info", "warning"];
 */
 let handler = undefined;
 
-/*
-* Valid variants are: error, success, info, and warning
-*/
+/**
+ * @function renderAlertMessage
+ * @summary 
+ * This will render alertbox
+ * 
+ * @param {string} [msg="Something went wrong"] Message to display in alertbox.
+ * @param {string} [variant="error"] Variants are error, success, info, and warning. <br>
+ * Variants will change the appearance of the alertbox. Only the border and the icon change.<br>
+ * error: red left border<br>
+ * info: blue left border<br>
+ * warning: yellow left border<br>
+ * success: green left border
+ * @param {integer} [time=4000] milliseconds for which alertbox will appear
+ * @example 
+ * renderAlertMessage("Successful registration", "success", 5000)
+ * renderAlertMessage() //Default alertbox will render
+ */
 function renderAlertMessage(msg, variant, time) {
 
   if(handler !== undefined) clearAlertMessage(handler);
@@ -38,6 +52,14 @@ function renderAlertMessage(msg, variant, time) {
   
 }
 
+/**
+ * @function clearAlertMessage
+ * @summary This will close the alertbox.
+ * @param {function} [h] timer function
+ * @example
+ * clearAlertMessage() //This means no timer function is active.
+ * clearAlertMessage(h) //This means h(timer function) is active.
+ */
 function clearAlertMessage(h) {
   if(h !== undefined) clearTimeout(h);
   const element = document.getElementById("alertbox");
@@ -53,12 +75,31 @@ function clearAlertMessage(h) {
   handler = undefined;
 }
 
+/**
+ * 
+ * @function removeChildren
+ * @summary This function will remove all the child node of the parent node.
+ * @param {object} node Parent node.
+ * @example
+ * var parent = document.getElementById("id-of-parent")
+ * removeChildren(parent)
+ */
 function removeChildren(node) {
   while (node.firstChild) {
     node.removeChild(node.firstChild);
   }
 }
 
+/**
+ * 
+ * @function replaceText
+ * @summary This will first remove all the text present in the element and the update that element with the new text.
+ * @param {object} elemId Target element.
+ * @param {string} text Updated text node of element.
+ * @example
+ * var parent = document.getElementById("id-of-parent")
+ * replaceText(parent, "This is updated message")
+ */
 function replaceText(elemId, text) {
   var elem = document.getElementById(elemId);
   var textNode = document.createTextNode(text);

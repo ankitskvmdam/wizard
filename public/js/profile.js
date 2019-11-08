@@ -69,6 +69,10 @@ function renderUserProfile(targetId) {
 }
 
 // This function will render name or login link in the header
+/**
+ * @function renderHeaderLoginOrUserName
+ * @summary This function renders user's name (if user is logged in) or login with href (if user is not logged in)
+ */
 function renderHeaderLoginOrUserName(){
 
   const auth = localStorage.auth || false

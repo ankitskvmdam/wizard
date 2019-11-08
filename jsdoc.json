@@ -15,5 +15,5 @@
         "recurse": true,
         "verbose": true,
         "template": "node_modules/postman-jsdoc-theme"
-    },
+    }
 }

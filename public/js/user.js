@@ -134,8 +134,13 @@ function logoutUser() {
 }
 
 
-// Function to setup localStorage after login
-// This function will set auth and navbar_title
+/**
+ * @function setupLocalStroageAfterLogin
+ * @summary This will add navbar_title and auth key to the localStorage. This function is called when user authenticated
+ * succesfully.
+ * 
+ */
+
 function setupLocalStroageAfterLogin(){
   fetchJson("/user/profile")
     .then(function(user) {
@@ -145,8 +150,12 @@ function setupLocalStroageAfterLogin(){
     });
 }
 
-// Function to reset the localStorage
-// This function will remove the auth and navbar_title value from localStorage
+/**
+ * @function resetLocalStorageAfterLogout
+ * @summary This function will remove the value of key auth and navbar_title from localStorage. This function is called when user
+ * logout
+ * 
+ */
 function resetLocalStorageAfterLogout(){
   localStorage.removeItem("auth")
   localStorage.removeItem("navbar_title")
