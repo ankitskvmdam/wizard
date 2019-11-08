@@ -12,7 +12,7 @@
     "docker-compose": "docker-compose up --build --force-recreate",
     "cypress:test": "concurrently  --kill-others-on-fail 'npm run docker-compose' 'npm run cypress:open'",
     "pretest": "npx eslint --fix --ignore-path .gitignore .",
-    "generate-docs": "npx jsdoc -c jsdoc.json",
+    "generate-docs": "npx jsdoc -c jsdoc.json && open-cli ./docs/index.html",
     "lint": "eslint .",
     "lint-fix": "eslint --fix ."
   },
@@ -24,7 +24,8 @@
     "http-errors": "~1.6.3",
     "jsdoc": "^3.6.3",
     "less-middleware": "~2.2.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "open-cli": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -36,6 +37,7 @@
     "eslint": "^6.3.0",
     "faker": "^4.1.0",
     "nodemon": "^1.19.1",
+    "postman-jsdoc-theme": "0.0.3",
     "wait-on": "^3.3.0",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
