@@ -14,6 +14,10 @@
         "destination": "docs/",
         "recurse": true,
         "verbose": true,
-        "template": "node_modules/postman-jsdoc-theme"
+        "template": "./node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+            "title": "Intermine Wizard",
+            "footer": "Intermine-Wizard documentation. Github: <a href='https://github.com/intermine/wizard' target='_blank'>https://github.com/intermine/wizard</a>"
+        }
     }
 }
