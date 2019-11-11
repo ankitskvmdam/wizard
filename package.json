@@ -17,7 +17,6 @@
     "lint-fix": "eslint --fix ."
   },
   "dependencies": {
-    "clean-jsdoc-theme": "^2.x",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -33,6 +32,7 @@
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "babel-loader": "^8.0.6",
+    "clean-jsdoc-theme": "^2.0.6",
     "concurrently": "^4.1.1",
     "cypress": "^3.4.1",
     "eslint": "^6.3.0",
